@@ -4,7 +4,7 @@ def nato_alphabet():
     'i':'india', 'j':'juliett', 'k':'kilo', 'l':'lima', 'm':'mike',
     'n':'november', 'o':'oscar', 'p':'papa', 'q':'quebec', 'r':'romeo',
     's':'sierra', 't':'tango', 'u':'uniform', 'v':'victor', 'w':'whiskey',
-    'x':'xray', 'y':'yankee', 'z':'zulu'}
+    'x':'xray', 'y':'yankee', 'z':'zulu', }
 
     message_initial = input('Enter message: ')
     message_initial = ''.join(char for char in message_initial if char.isalpha()).lower()
