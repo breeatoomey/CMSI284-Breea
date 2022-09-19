@@ -7,7 +7,6 @@ def morse_code():
     'x':'-..-', 'y':'-.--', 'z':'--..'}
 
     message_initial = input('Enter message: ')
-    # May need to replace all non a-z characters
     message_initial = ''.join(char for char in message_initial if char.isalpha()).lower()
     for char in message_initial:
         print(letter_to_morse_code[char])
