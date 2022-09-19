@@ -7,8 +7,6 @@ def nato_alphabet():
     'x':'xray', 'y':'yankee', 'z':'zulu'}
 
     message_initial = input('Enter message: ')
-    # May need to replace all non a-z characters
-    #essage_initial = message_initial.replace(' ', '').lower()
     message_initial = ''.join(char for char in message_initial if char.isalpha()).lower()
     for char in message_initial:
         print(letter_to_nato_alphabet[char])
