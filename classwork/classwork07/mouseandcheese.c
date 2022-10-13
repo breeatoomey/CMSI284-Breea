@@ -103,18 +103,26 @@ int main() {
    *    mask[i] is true if the character s[i] has been guessed.
    * The mask must be allocated, and initialized to all false
    */
-
+   int mask[strlen(words[index])];
+   for (int i = 0; i < strlen(words[index]); i++) {
+     mask[i] = FALSE;
+   }
   /*
    * Print the instructions
    */
    instructions();
 
   // Loop over each round of guessing
-   while( /* what two conditions are needed here? */ ) {
+   while(guesses < MAX_GUESSES && !allGuessed) {
+     found = FALSE;
      // Print word with underscores for unguessed letters
       printf( "\n  The word is now: " );
-      for( int j = 0; j < N; ++j ) {
-        // TODO: fill this in!
+      for( int j = 0; j < strlen(words[index]); ++j ) {
+        if (mask[j] == TRUE) {
+          printf("%c", words[index][j]);
+        } else {
+          printf("_");
+        }
       }
       printf( "    You've used %d of %d guesses...\n", guesses, MAX_GUESSES );
 
@@ -123,8 +131,25 @@ int main() {
 
      // Mark as true all mask positions corresponding to guess
      //  if they are correct!
+     for (int j = 0; j < strlen(words[index]); ++j) {
+       if (guess == words[index][j]) {
+         mask[j] = TRUE;
+         found = TRUE;
+       }
+     }
+
+     if (found != TRUE) {
+       guesses ++;
+     }
 
      // Determine whether the player has won!
+     allGuessed = TRUE;
+     for (int j = 0; j < strlen(words[index]); ++j) {
+       if (mask[j] == FALSE) {
+         allGuessed = FALSE;
+         break;
+       }
+     }
    }
 
   // Print victory message!
