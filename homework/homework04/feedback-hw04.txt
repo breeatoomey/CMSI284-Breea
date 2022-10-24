@@ -1,0 +1,73 @@
+
+
+Evaluation Criteria ~ homework04
+CMSI 284 Section 01 Spring 2021
+=================================
+
+LOGIC DESIGN
+   Logic Question 1a         10/10
+   Logic Question 1b          5/ 5
+   Logic Question 2          10/10
+
+REGISTER OPERATIONS
+   Register clear even        2/ 2
+   Register set last 3        2/ 2
+   Reg./8 remainder           2/ 2
+   Reg. set to -1             2/ 2
+   Reg. invert 2 MSBs         2/ 2
+   Register computation       2/ 2
+
+STANLEY/PENGUIN ASSEMBLY
+   Q4 - program 1a           11/11
+   Q5 - program 1b           11/11
+   Q6 - GCD prog.             6/11
+   Q7 - swap frag             3/ 5
+   Q8 - jmp to addr           3/ 5
+
+REGISTER INVESTIGATION
+   Q9a - high level expl.     5/ 5
+   Q9b - Why?                 5/ 5
+
+
+Total possible points        90 points
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 81.0/ 90.0 which is  90% which is an A-minus
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+Nice work on this!  A couple of comments:
+
+On the GCD problem, you have the opcodes mixed up.  "LOAD" and "STORE" are
+for the accumulator.  "READ" and "WRITE" are for the port.  You should READ
+from the port two times to get the two values.  Since that puts them into
+the accumulator, you have to write each one out to its memory location.  You
+should assume that the first one read is "a" and the secone is "b".  Your
+'gcd' label won't actually calculate the gcd.
+
+On the swap problem 7, your code overwrites the value in the accumulator with
+the new value you read from 'temp' so this won't swap.
+
+On problem 8, you only need two lines of code, one for "JGZ" and one for "JZ".
+
+Problem 9 part two, you were close enough!
+
+Good job!
+
+========================================================
+SEMESTER SCORE SO FAR:
+
+   homework01 ~ 100.00% of  5 points =  5.00 points
+   homework02 ~ 100.00% of  5 points =  5.00 points
+   homework03 ~ 100.00% of  5 points =  5.00 points
+   homework04 ~  90.00% of  5 points =  4.50 points
+                                total: 19.50 out of 20.0 = 97.5%
+                                which is an A-plus for homework so far
+
+Since quizzes and tests are individual, that score is not added in to the
+group work.  Quiz one is worth 10%.
+
+Keep up the good work!
