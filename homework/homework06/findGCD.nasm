@@ -4,7 +4,6 @@
 ;     Euclid's Algorithm
 ;     GCD(A, B):
 ;         if A is 0: return B
-;         if B is 0: return A
 ;         GCD(B, A%B)
 ;
 ;     to assemble: nasm -fwin32 findGCD.nasm
@@ -13,13 +12,13 @@
 ;     GCD(3113041662, 11570925) = 462837
 ; -----------------------------------------------------------------------------
 
-                global    _main
-                extern    _puts
-                extern    _printf
-                extern    _scanf
-                default   rel
+        global    _main
+        extern    _puts
+        extern    _printf
+        extern    _scanf
+        default   rel
 
-                section   .text
+        section   .text
 _main:
         push    ebx
 
@@ -40,18 +39,20 @@ get2:
         call    _scanf
         add     esp, 8
 checkA:
-        ; if A is 0                             idiv
-        ; answer is B
-checkB:
-        ; if B is 0
-        ; answer is A
+        mov     eax, number1    ; move number1 to eax
+        jz      quit            ; jump if eax is 0
 gcd:
-        ; set remainder to A%B        search idiv for nasm division
-        ; set A to B
-        ; set B to remainder
-        ; jump to checkA
+        mov     ecx, number2    ; move number2 to ecx
+        mov     eax, number1    ; move number1 to eax
+        idiv    ecx             ; stores remainder in edx?
+        mov     [number1], ecx  ; set A to B
+        mov     [number2], edx  ; set B to remainder
+        jmp     checkA          ; jump to checkA
 quit:
-        ; stdout
+        push    number2         ; push B
+        call    _printf
+        add     esp, 4
+        pop     ebx
         ret
 
                 section   .data
