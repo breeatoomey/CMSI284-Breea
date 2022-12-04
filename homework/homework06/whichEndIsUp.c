@@ -6,3 +6,16 @@
  * problem, write a C program whichEndIsUp.cthat will determine whether your 
  * computer is big-endian or little-endian.
 */
+
+#include <stdio.h>
+
+int main() {
+    int x = 1;
+    if(*(char*)&x == 1) {
+        printf("little-endian");
+    }
+    else {
+        printf("big-endian");
+    }
+    return 0;
+}
