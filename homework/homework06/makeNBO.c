@@ -11,7 +11,7 @@
 int main( int argc, char * argv[] ) {
     int x = 1;
     int byte = atoi(argv[1]);
-    if(*(char*)&x != 1) {
+    if(*(char*)&x == 1) {
         printf("little-endian");
         // printf("%l", htonl(byte));
     }
