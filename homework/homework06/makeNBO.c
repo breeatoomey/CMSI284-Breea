@@ -2,6 +2,8 @@
  * Reads a number from the command line arguments and swaps its byte order,
  * if necessary, to be in Network Byte Order. Create a test program to call
  * your function and display the results on stdout.
+ * 
+ * To compile on Windows: gcc clientPC.c -lws2_32 -o clientPC.exe
  */
 
 #include <stdio.h>
@@ -27,7 +29,7 @@ int main (int argc, char* argv[]) {
         return 1;
     }
     uint32_t number = (uint32_t) argv[1];
-    printf("%ul", makeNBO(number));
+    printf("%u", makeNBO(number));
     WSACleanup();
     return 0;
 }
