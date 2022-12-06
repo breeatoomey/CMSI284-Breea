@@ -12,14 +12,14 @@
 ;     GCD(3113041662, 11570925) = 462837
 ; -----------------------------------------------------------------------------
 
-        global    _main
+        global    _findGCD
         extern    _puts
         extern    _printf
         extern    _scanf
         default   rel
 
         section   .text
-_main:
+_findGCD:
         push    ebx
 
 get1:

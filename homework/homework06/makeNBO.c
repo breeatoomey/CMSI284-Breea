@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
+#include <inttypes.h>
 #include <winsock2.h>
 
 uint32_t makeNBO (uint32_t number) {
