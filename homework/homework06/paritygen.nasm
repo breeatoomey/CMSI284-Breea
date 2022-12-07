@@ -16,15 +16,32 @@
 
 ;--------------------------------------------------------------------------------
 
-          global       _start
+          global       start
 
           section      .text
-_start:   mov          rbx, 00000001b
-          and          rax, rbx
-          cmp          rax, 1
-          jz           count
-          shr          rax, 1
-          jmp          _start
-
-count:    inc          rcx
-          jmp          _start
+start:
+          xor          rax, rax
+          xor          rsi, rsi
+          xor          rdx, rdx
+          mov          rsi, 8
+loop:
+          dec          rsi
+          rcr          rdi, 1
+          jc           count
+check:
+          cmp          rsi, 0
+          je           result
+          jmp          loop
+count:
+          inc          rax
+          jmp          start
+result:
+          bt           rax, 0
+          jc           zeroParity
+          jmp          oneParity
+zeroParity:
+          mov          rax, 0
+          ret
+oneParity:
+          mov          rax, 1
+          ret
