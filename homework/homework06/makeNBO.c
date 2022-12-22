@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <winsock2.h>
+// #include <winsock2.h>
 
 int makeNBO (int number) {
     return htonl(number);

@@ -1,0 +1,86 @@
+
+
+Evaluation Criteria ~ homework06
+CMSI 2210 Section 02 Spring 2022
+=================================
+
+FINDGCD.NASM
+   assembles            [5 pts.] 4 points earned
+   runs                 [5 pts.] 5 points earned
+   output correct       [2 pts.] 0 points earned
+GCDFINDER
+   nasm file assembles  [5 pts.] 4 points earned
+   gcdFinder.c compiles [5 pts.] 5 points earned
+   link both files      [5 pts.] 5 points earned
+   nasm returns value   [5 pts.] 5 points earned
+   output correct       [2 pts.] 0 points earned
+PARITYGEN
+   nasm assembles       [5 pts.] 5 points earned
+   nasm links           [5 pts.] 5 points earned
+   nasm runs            [5 pts.] 5 points earned
+   output correct       [2 pts.] 0 points earned
+WHICHENDISUP
+   compiles no errors   [5 pts.] 5 points earned
+   runs no errors       [5 pts.] 5 points earned
+MAKENBOC.C
+   compiles no errors   [5 pts.] 5 points earned
+   uses previous func.  [5 pts.] 5 points earned
+   tester compiles      [5 pts.] 5 points earned
+   tester runs          [5 pts.] 5 points earned
+   output correct       [2 pts.] 2 points earned
+MAKENBO.NASM
+   assembles            [5 pts.] 5 points earned
+   link both files      [5 pts.] 5 points earned
+   calls "C" function   [5 pts.] 5 points earned
+   output correct       [2 pts.] 2 points earned
+
+Total possible points 100
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 94.00/100.00 which is 94% which is a solid A
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+Your 'findGCD.nasm' program had a couple of errors which I fixed for you so
+that it would assemble.  It works mostly now, but doesn't return an output.
+Still, very good that you got this much going!
+
+Your 'gcdFinder.c' program needs some work.  The "C" part is fine, but the
+nasm part needs to change more from the original file.  It should take the
+two numbers as arguments which are going to be on the stack for Win32, or
+in the rsi and rdi registers for mac, and not do the same as before when you
+ask the user.  That's why you need a different source file for that.
+
+Your paritygen doesn't output anything.
+
+'whichEndIsUp' works perfectly.  Nice job!
+
+Your makeNBO.nasm and makeNBO.c look fine but when it runs it gets a seg
+faul.  The standalone makeNBO.c as a test works just fine on both windows
+and mac.  The seg fault is from the nasm program that calls the "C" function
+You'll need to use the debugger to find out where that happens and fix it if
+you want a running program.
+
+All-in-all, nice work on this difficult assignment!  I see you did some
+research into some commands we didn't cover in class, too..... GREAT!!!
+
+========================================================
+SEMESTER HOMEWORK TOTALS:
+
+   homework01 ~ 100.00% of  5 points =  5.00 points
+   homework02 ~ 100.00% of  5 points =  5.00 points
+   homework03 ~ 100.00% of  5 points =  5.00 points
+   homework04 ~  90.00% of  5 points =  4.50 points
+   homework05 ~ 100.00% of 10 points = 10.00 points
+   homework06 ~  94.00% of 15 points = 14.10 points
+                       semester total: 43.60 out of 45.00 = 96.89%
+                             which is also a solid A, borderline A-plus
+
+Great work!
+
+Very good work overall.... this is hard stuff and you have worked diligently
+for the entire semester.  I look forward to seeing you in future courses ~
+have a great holiday!

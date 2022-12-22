@@ -12,14 +12,17 @@
 ;     GCD(3113041662, 11570925) = 462837
 ; -----------------------------------------------------------------------------
 
-        global    _findGCD
+;        global    _findGCD      ; this should be the main program
+        global    _main
         extern    _puts
         extern    _printf
         extern    _scanf
         default   rel
 
         section   .text
-_findGCD:
+
+;_findGCD:                       ; so should this
+_main:
         push    ebx
 
 get1:
@@ -61,5 +64,8 @@ prompt2:   db   "Enter second number: ", 0x00
 format:    db   "%d", 0x00
 
                 section   .bss
-number1:   dd   0
-number2:   dd   0
+;number1:   dd   0
+;number2:   dd   0
+;these should be 'resb' with a number of bytes
+number1:    resb  4
+number2:    resb  4

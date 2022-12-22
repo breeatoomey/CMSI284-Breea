@@ -1,11 +1,11 @@
-; Does the byte order swapping BY CALLING YOUR C function. Make your nasm 
-; program call the function at least five times with different values to test 
+; Does the byte order swapping BY CALLING YOUR C function. Make your nasm
+; program call the function at least five times with different values to test
 ; it.
 
 ; For Mac:
-; gcc makeNBO.c -o makeNBOFunction
+; gcc -c makeNBO.c -o makeNBOFunction.o         ; updated for correct options
 ; nasm -fmacho64 makeNBO.nasm
-: gcc makeNBO.o makeNBOFunction.o makeNBO
+; gcc makeNBO.o makeNBOFunction.o -o makeNBO
 ; ./makeNBO
 
         global      _main

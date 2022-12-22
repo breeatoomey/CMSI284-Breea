@@ -3,10 +3,12 @@
 ; we are using odd parity.
 ;--------------------------------------------------------------------------------
 
-          global       start
+;          global       start       ;needs to be '_main' or '_paritygen'
+          global       _main
 
           section      .text
-start:
+;start:                             ; here, too....
+_main:
           xor          rax, rax
           xor          rsi, rsi
           xor          rdx, rdx
